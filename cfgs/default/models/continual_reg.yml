@@ -1,0 +1,82 @@
+exp:
+    train:
+        n_epochs: [5, 120, 340, 32]
+        rand_seed: 42
+        optimizer:
+            name: adam
+            lr: 1e-4
+    val:
+        save_latest_model: True
+        skip_initial_val: False
+        n_epochs_once: 10000
+        n_iters_once: 5000
+        no_val_before_epoch: 0
+    compile_model: False
+
+model:
+    name: continual_reg
+    task_sequential: True
+    multiscale: False
+    ws_loss:
+        ncc: 1.
+        dice: 1.
+        tre: 1.
+        bending: 1.
+        membrane: 1.
+    ncc:
+        win: 3
+    tre:
+        label_center: False
+    dice:
+        kernel_sigma: 1
+    regularization:
+        over: vel
+
+method:
+    name: sgd
+    buffer:
+        cpu: True
+    ewc:
+        e_lambda: 10
+        gamma: 1
+    gpm:
+        threshold: 0.92
+        step_size: 0.005
+        sample_rate: 0.1
+        num_samples: 20
+    er:
+        buffer_size: 200
+    mer:
+        beta: 0.25
+    sam:
+        rho: 0.05
+        adaptive: False
+        weight_decay: 1e-5
+
+net:
+    n_channels_init: 16
+    n_levels: 4
+    large_kernel: 5
+    momentum_bns: 0.01
+    dropout: 0.
+    double_channels: True
+    output_vel: True
+    symmetric: True
+    residual: True
+
+    encoder:
+        conv_blk:
+            n_layers: 2
+            kernel_size: 3
+    decoder:
+        merge_skip: sum
+        conv_blk:
+            n_layers: 2
+            kernel_size: 3
+        deconv_blk:
+            mode: resize_conv
+            resize_conv:
+                kernel_size: 1
+        out_conv:
+            kernel_size: 1    
+

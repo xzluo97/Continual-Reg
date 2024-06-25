@@ -1,0 +1,7 @@
+dataset:
+    n_channels_img: 1
+    dim: 3
+    size_img: [112, 96, 112]
+    one_sample_only: False
+    normalization: min-max
+    intensity_aug: False

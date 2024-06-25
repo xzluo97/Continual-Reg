@@ -1,0 +1,23 @@
+exp:
+    mode: train
+    n_workers: 2
+    torchinfo: False
+    train:
+        batch_size: 1
+    val:
+        batch_size: 1
+    test:
+        batch_size: 1
+        save_jacobian: False
+        test_initial_metrics: False
+        reduce_memory: False
+        save_result:
+            enable: False
+            idx_sample: 0
+            img_ori: False
+            img_warped: False
+            seg_ori: False
+            seg_warped: False
+            disp: False
+            recon: False
+

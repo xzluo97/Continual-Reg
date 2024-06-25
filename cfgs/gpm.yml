@@ -1,0 +1,41 @@
+exp:
+    name: gpm
+    names_exp_delete: ['tmp', 'train_gpm']
+    n_workers: 2
+    idx_device: 0
+    train:
+        batch_size: 4
+        n_epochs: [10, 240, 680, 64]
+        optimizer:
+            name: adam
+            lr: 1e-4
+    val:
+        batch_size: 4
+        n_iters_once: 5000
+        skip_initial_val: True
+    test:
+        batch_size: 4
+
+dataset:
+    name: continual3d
+
+model:
+    name: continual_reg
+    ws_loss:
+        mi: 0.
+        ncc: 1
+        dice: 1.
+        tre: 1.
+        membrane: 1.
+        bending: 1.
+    ncc:
+        win: 3
+
+method:
+    name: gpm
+    gpm:
+        threshold: 0.97
+        num_samples: 200
+
+net:
+    n_channels_init: 16
