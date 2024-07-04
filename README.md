@@ -15,7 +15,7 @@ For any questions or problems please [open an issue](https://github.com/xzluo97/
 
 ## Citation
 
-```latex
+```bibtex
 @inproceedings{ContinualReg,
   title={Toward Universal Medical Image Registration via Sharpness-Aware Meta-Continual Learning},
   author={Wang, Bomin and Luo, Xinzhe and Zhuang, Xiahai},
