@@ -1,6 +1,6 @@
 exp:
-    name: gpm
-    names_exp_delete: ['tmp', 'train_gpm']
+    name: ewc
+    names_exp_delete: ['tmp', 'train_ewc']
     n_workers: 4
     idx_device: 0
     train:

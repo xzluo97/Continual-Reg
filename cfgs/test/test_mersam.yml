@@ -1,0 +1,45 @@
+exp:
+    mode: test
+    name: test_mersam
+    names_exp_delete: ['tmp', 'test_mersam']
+    n_workers: 2
+    idx_device: 0
+    train:
+        batch_size: 2
+        optimizer:
+            name: adam
+            lr: 1e-4
+    val:
+        batch_size: 2
+        n_epochs_once: 5
+        skip_initial_val: True
+    test:
+        batch_size: 2
+        path_model_trained: ./save/checkpoints/model.pth
+        reduce_memory: True
+        save_result:
+            enable: False
+            idx_sample: 0
+            img_ori: True
+            img_warped: True
+            seg_warped: True
+            disp: True
+
+dataset:
+    name: continual3d
+
+model:
+    task_sequential: True
+    name: continual_reg
+    ws_loss:
+        mi: 0.
+        ncc: 1.
+        dice: 1.
+        tre: 1.
+        membrane: 1.
+        bending: 1.
+    ncc:
+        win: 3
+
+method:
+    name: sgd
