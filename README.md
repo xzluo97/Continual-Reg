@@ -1,6 +1,8 @@
 # Continual-Reg
 Welcome! This library provides the official implementation of our paper "Toward Universal Medical Image Registration via Sharpness-Aware Meta-Continual Learning" accepted by MICCAI 2024 [[arxiv](https://arxiv.org/abs/2406.17575)].
 
+![cl_mr](./media/cl_mr.png)
+
 ## Usage
 
 1. Setup your dataset and its path in `./core/datasets/continual3d.py`.
