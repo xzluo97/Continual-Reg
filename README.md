@@ -9,7 +9,7 @@ Welcome! This library provides the official implementation of our paper "Toward 
 2. Install the training tool [deep_kit](https://github.com/xzluo97/deep_kit/tree/dev). 
 3. Setup the model configuration by modifying the yaml files in `./cfgs`.
 4. Run the code in terminal by `python train.py exp.name=trmersam`. This would start the training using sharpness-aware meta-continual learning.
-5. Test the trained model by running `python train.py exp.name=temersam`.
+5. Test the trained model by running `python test.py exp.name=temersam`.
 
 ## Contact
 
