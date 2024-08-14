@@ -8,8 +8,8 @@ Welcome! This library provides the official implementation of our paper "Toward 
 1. Setup your dataset and its path in `./core/datasets/continual3d.py`.
 2. Install the training tool [deep_kit](https://github.com/xzluo97/deep_kit/tree/dev). 
 3. Setup the model configuration by modifying the yaml files in `./cfgs`.
-4. Run the code in terminal by `tr mersam`. This would start the training using sharpness-aware meta-continual learning.
-5. Test the trained model by running `te test_mersam`.
+4. Run the code in terminal by `python train.py exp.name=trmersam`. This would start the training using sharpness-aware meta-continual learning.
+5. Test the trained model by running `python train.py exp.name=temersam`.
 
 ## Contact
 
